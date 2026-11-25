@@ -1,0 +1,17 @@
+[
+  {
+    "title": "PostgreSQL Connection Pool Exhaustion",
+    "category": "Database",
+    "content": "Cause: Idle connections or traffic spike exceeding max_connections. Fix: Run SELECT count(*) FROM pg_stat_activity; terminate idle sessions using pg_terminate_backend(), and verify PgBouncer pool limits."
+  },
+  {
+    "title": "JWT Brute-Force & Credential Stuffing Spike",
+    "category": "Security",
+    "content": "Cause: Repeated 401 Unauthorized POST /auth/login attempts from single IP subnet. Fix: Enable Redis rate-limiting (max 5 req/min), block offending CIDR block in WAF, and rotate compromised session tokens."
+  },
+  {
+    "title": "Docker Container OOMKilled (Exit Code 137)",
+    "category": "SRE/DevOps",
+    "content": "Cause: Memory leak or unoptimized batch query exceeding container RAM limit. Fix: Inspect docker stats, analyze heap dump, increase container memory limit in compose/k8s manifest, and restart service."
+  }
+]
